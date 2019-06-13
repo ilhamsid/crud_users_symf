@@ -1,0 +1,16 @@
+1- créer la base de données 
+php bin/console doctrine:database:create
+
+2- installer les tables
+php bin/console make:migration
+php bin/console doctrine:migration:migrate
+
+3- ajouter le user admin
+php bin/console doctrine:fixtures:load
+
+4- run server
+php -S 127.0.0.1:8000 -t public
+
+5- connecter l'admin
+http://127.0.0.1:8000/login
+admin@a.fr / admin
