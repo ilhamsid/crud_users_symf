@@ -1,0 +1,39 @@
+#section1{
+	background-image: linear-gradient(to bottom, red , yellow);
+	background: url("../img/template/backg.png") no-repeat center center;
+  	background-size: cover; 
+  	height: 500px;
+	margin-bottom: 2rem;
+	color: #fff;
+}
+
+.uppercase {
+text-transform: uppercase;
+}
+
+.navbar-light, .navbar-light a,
+.navbar-light .nav-item.active .nav-link,
+.navbar-light .nav-item:focus .nav-link,
+.navbar-light .nav-item:hover .nav-link {
+        color: #ffffff;
+}
+
+.cat_circle {
+  border: 1px solid #000;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cat_circle img {
+  width: 70%;
+  height: auto;
+}
+
+.card, .card-img {
+  border-radius: 0;
+  border: 0
+}

@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User index{% endblock %}
+
+{#
+{% block body %}
+<h1 class="display-4">Liste users</h1>
+
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-md-4 themed-grid-col"><strong>Email</strong></div>
+        <div class="col-md-4 themed-grid-col"><strong>Nom</strong></div>
+        <div class="col-md-4 themed-grid-col"></div>
+    {% for user in users %}
+        <div class="col-md-4 themed-grid-col">{{ user.email }}</div>
+        <div class="col-md-4 themed-grid-col">{{ user.nomComplet }}</div>
+        <div class="col-md-4 themed-grid-col">.col-md-4</div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}
+#}
+
+
+{% block body %}
+<div class="container">
+    <h1>Liste Users</h1>
+
+    <p><a class="btn btn-primary btn-lg" href="{{ path('user_new') }}" role="button">Ajout user</a></p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>NomComplet</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                <td>{{ user.nomComplet }}</td>
+                <td>
+                    <a href="{{ path('user_show', {'id': user.id}) }}">Détail</a> | 
+                    <a href="{{ path('user_edit', {'id': user.id}) }}">Edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    
+</div>
+{% endblock %}
