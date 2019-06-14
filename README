@@ -2,7 +2,6 @@
 php bin/console doctrine:database:create
 
 2- installer les tables
-php bin/console make:migration
 php bin/console doctrine:migration:migrate
 
 3- ajouter le user admin
